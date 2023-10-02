@@ -13,6 +13,80 @@
 		<link rel="stylesheet" href="css/swiper.min.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
+	<script>
+        /** TO DISABLE CODE WHIT CTRL+U **/
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key == 's') {
+        alert('Não têm permissão de salvar páginar 💾');
+        e.cancelBubble = true;
+        e.preventDefault();
+        e.stopImmediatePropagation();
+    }
+});
+    /** TO DISABLE CODE WHIT CTRL+U **/
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key == 'u') {
+        alert('Não têm permissão de ver o código fonte 👨‍💻');
+        e.cancelBubble = true;
+        e.preventDefault();
+        e.stopImmediatePropagation();
+    }
+});
+/** TO DISABLE SCREEN CAPTURE **/
+document.addEventListener('keyup', (e) => {
+    if (e.key == 'PrintScreen') {
+        navigator.clipboard.writeText('');
+        alert('Capturas de tela desativadas! 👾');
+    }
+});
+
+/** TO DISABLE PRINTS WHIT CTRL+P **/
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key == 'p') {
+        alert('Esta seção não tem permissão para imprimir ou exportar para PDF 🛡️');
+        e.cancelBubble = true;
+        e.preventDefault();
+        e.stopImmediatePropagation();
+    }
+});
+
+// TO DO: There are combinations that remain to be solved 
+//     --> Windows+Shift+S
+
+</script>
+        <script language="JavaScript">
+        function protegercodigo() {
+        if (event.button==2||event.button==3){
+            alert('Código protegido por: Marcos Santos 🤓');}
+        }
+        document.onmousedown=protegercodigo
+    </script>
+    <script>
+    if (document.addEventListener) {
+        document.addEventListener("keydown", bloquearSource);
+    } else { //Versões antigas do IE
+        document.attachEvent("onkeydown", bloquearSource);
+    }
+    
+    function bloquearSource(e) {
+        e = e || window.event;
+    
+        var code = e.which || e.keyCode;
+    
+        if (
+            e.ctrlKey &&
+            (code == 83 || code == 85) //83 = S, 85 = U
+        ) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false;
+            }
+    
+            return false;
+        }
+    }
+    </script>
 	<style>
 		/* ===== Scrollbar CSS ===== */
 	  /* Firefox */
